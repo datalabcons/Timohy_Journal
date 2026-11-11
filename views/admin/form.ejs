@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h1><%= heading %></h1>
+
+<% if (errors.length) { %>
+  <ul class="error" role="alert">
+    <% errors.forEach(function (e) { %><li><%= e %></li><% }) %>
+  </ul>
+<% } %>
+
+<form action="<%= action %>" method="post" class="stack">
+  <label>
+    Article Title
+    <input type="text" name="title" value="<%= article.title %>" maxlength="200" required>
+  </label>
+  <label>
+    Publishing Date
+    <input type="date" name="date" value="<%= article.date %>" required>
+  </label>
+  <label>
+    Content
+    <textarea name="content" rows="14" required><%= article.content %></textarea>
+    <small class="muted">Leave a blank line between paragraphs.</small>
+  </label>
+  <div class="form-actions">
+    <button type="submit"><%= submitLabel %></button>
+    <a href="/admin">Cancel</a>
+  </div>
+</form>
+
+<%- include('../partials/footer') %>

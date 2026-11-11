@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<div class="title-row">
+  <h1>Personal Blog</h1>
+  <a class="add-link" href="/new">+ Add</a>
+</div>
+
+<% if (articles.length === 0) { %>
+  <p class="muted">No articles yet. <a href="/new">Write your first one.</a></p>
+<% } else { %>
+  <ul class="article-list admin">
+    <% articles.forEach(function (a) { %>
+      <li>
+        <a href="/article/<%= a.id %>"><%= a.title %></a>
+        <span class="actions">
+          <a href="/edit/<%= a.id %>">Edit</a>
+          <form action="/delete/<%= a.id %>" method="post" class="inline"
+                onsubmit="return confirm('Delete this article? This cannot be undone.');">
+            <button type="submit" class="link-button danger">Delete</button>
+          </form>
+        </span>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+
+<%- include('../partials/footer') %>
