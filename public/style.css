@@ -1,0 +1,148 @@
+:root {
+  --bg: #eef3f1;
+  --card: #ffffff;
+  --ink: #1d2b26;
+  --muted: #8a948f;
+  --accent: #24473a;
+  --danger: #b3261e;
+  --border: #1d2b26;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+h1, .brand, .article-list a, label, button {
+  font-family: 'Kalam', 'Comic Sans MS', cursive;
+}
+
+a { color: var(--accent); }
+
+.site-header {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.brand { font-size: 1.3rem; font-weight: 700; text-decoration: none; color: var(--ink); }
+.site-header nav { display: flex; gap: 1rem; align-items: center; }
+.site-header nav a { text-decoration: none; }
+
+.card {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem 2rem;
+}
+
+h1 { margin-top: 0; font-size: 2rem; }
+
+.muted { color: var(--muted); }
+
+.article-list { list-style: none; padding: 0; margin: 0; }
+.article-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed #d5dcd9;
+}
+.article-list li:last-child { border-bottom: none; }
+.article-list a { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+.article-list a:hover { text-decoration: underline; }
+.article-list time { color: var(--muted); white-space: nowrap; font-size: 0.95rem; }
+
+.actions { display: flex; gap: 0.9rem; align-items: baseline; }
+.actions a,
+.actions .link-button {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.actions a:hover { color: var(--ink); text-decoration: underline; }
+
+.title-row { display: flex; justify-content: space-between; align-items: baseline; }
+.add-link { font-weight: 700; text-decoration: none; }
+
+.article-body p { margin: 1rem 0; }
+
+.stack { display: flex; flex-direction: column; gap: 1rem; }
+.narrow { max-width: 360px; }
+label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 700; }
+input, textarea {
+  font: inherit;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  width: 100%;
+}
+textarea { resize: vertical; }
+input:focus, textarea:focus { outline: 3px solid #9cc5b4; outline-offset: 1px; }
+
+button {
+  font-size: 1rem;
+  padding: 0.45rem 1.4rem;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  cursor: pointer;
+  align-self: flex-start;
+}
+button:hover { background: var(--accent); color: #fff; }
+
+.form-actions { display: flex; gap: 1rem; align-items: center; }
+
+form.inline { display: inline; margin: 0; }
+.link-button {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-decoration: underline;
+}
+.link-button:hover { background: none; color: var(--ink); }
+.link-button.danger { color: var(--muted); text-decoration: none; }
+.link-button.danger:hover { color: var(--danger); }
+.site-header .link-button { text-decoration: none; font-size: 1rem; }
+
+.flash {
+  background: #e3f1ea;
+  border-left: 4px solid var(--accent);
+  padding: 0.6rem 0.9rem;
+  border-radius: 4px;
+}
+.error {
+  background: #fbeceb;
+  border-left: 4px solid var(--danger);
+  color: var(--danger);
+  padding: 0.6rem 0.9rem 0.6rem 1.6rem;
+  border-radius: 4px;
+}
+p.error { padding-left: 0.9rem; }
+
+.site-footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding-bottom: 2rem; }
+
+@media (max-width: 560px) {
+  .card { padding: 1.25rem; border-radius: 0; border-left: none; border-right: none; }
+  .article-list li { flex-direction: column; gap: 0; }
+}

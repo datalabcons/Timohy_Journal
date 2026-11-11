@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<h1>Personal Blog</h1>
+
+<% if (articles.length === 0) { %>
+  <p class="muted">No articles yet. Check back soon!</p>
+<% } else { %>
+  <ul class="article-list">
+    <% articles.forEach(function (a) { %>
+      <li>
+        <a href="/article/<%= a.id %>"><%= a.title %></a>
+        <time datetime="<%= a.date %>"><%= formatDate(a.date) %></time>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+
+<%- include('partials/footer') %>

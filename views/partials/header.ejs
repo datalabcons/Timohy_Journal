@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A personal blog where I write and publish articles on various topics.">
+  <title><%= title %> · Personal Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/home">Personal Blog</a>
+    <nav>
+      <a href="/home">Home</a>
+      <% if (isAdmin) { %>
+        <a href="/admin">Dashboard</a>
+        <form action="/logout" method="post" class="inline">
+          <button type="submit" class="link-button">Log out</button>
+        </form>
+      <% } else { %>
+        <a href="/login">Admin</a>
+      <% } %>
+    </nav>
+  </header>
+  <main class="card">
+    <% if (flash) { %>
+      <p class="flash" role="status"><%= flash %></p>
+    <% } %>
