@@ -6,7 +6,7 @@ A personal blog where I write and publish articles. Built for the [roadmap.sh Pe
 
 🎬 **Demo video:** <!-- TODO: paste your video link or drag the .mp4 into this README on GitHub -->
 
-https://github.com/YOUR-USERNAME/personal-blog/assets/VIDEO-ID
+<!-- your video link here -->
 
 ---
 
@@ -43,7 +43,7 @@ The admin pages are protected by a single username and password (set with enviro
 ## Project Structure
 
 ```
-personal-blog/
+Timohy_Journal/
 ├── articles/          # one JSON file per article
 ├── public/style.css   # styles
 ├── src/
@@ -59,8 +59,8 @@ personal-blog/
 ## Running Locally
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/personal-blog.git
-cd personal-blog
+git clone https://github.com/datalabcons/Timohy_Journal.git
+cd Timohy_Journal
 npm install
 cp .env.example .env   # then edit the values
 npm run dev            # http://localhost:3000
