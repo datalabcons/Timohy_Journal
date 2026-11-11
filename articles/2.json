@@ -1,0 +1,6 @@
+{
+  "id": "2",
+  "title": "What I Learned Building My First Express App",
+  "date": "2026-11-06",
+  "content": "Express makes it surprisingly quick to get a server running. The trickier parts were deciding how to organise routes and how to keep the admin pages private.\n\nI ended up with a small middleware that checks for a logged-in session before any admin route runs. Middleware is one of those ideas that clicks once you write your own."
+}

@@ -1,0 +1,6 @@
+{
+  "id": "3",
+  "title": "Storing Data Without a Database",
+  "date": "2026-11-10",
+  "content": "For this project every article is saved as its own JSON file. It keeps things simple and easy to inspect: open the articles folder and you can read every post.\n\nThe trade-off is that it does not scale to lots of writes at once, and some free hosts wipe the filesystem on redeploy. For a personal blog, it is a perfectly good start."
+}
